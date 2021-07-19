@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import GlobalStyle, { Container } from './globalStyles';
+import Header from './components/Header/Header';
+import SidebarMenu from './components/SideBarMenu/SidebarMenu';
+import MainContent from './components/MainContent/MainContent';
+import AccountContent from './components/AccountContent/AccountContent';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<>
+			<GlobalStyle />
+			<Container>
+				<Header />
+				<div className='container'>
+					<div className='row'>
+						<SidebarMenu />
+						<MainContent />
+						<AccountContent />
+            
+					</div>
+				</div>
+			</Container>
+		</>
+	);
 }
 
 export default App;
